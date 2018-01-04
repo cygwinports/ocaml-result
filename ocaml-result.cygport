@@ -1,0 +1,19 @@
+inherit ocaml
+
+NAME="ocaml-result"
+VERSION=1.2
+RELEASE=1
+CATEGORY="OCaml"
+SUMMARY="Compatibility library for OCaml result type"
+DESCRIPTION="Projects that want to use the new result type defined in OCaml
+4.03+ while staying compatible with older version of OCaml should use the
+Result module defined in this library."
+HOMEPAGE="https://github.com/janestreet/result"
+SRC_URI="${HOMEPAGE}/archive/${VERSION}/result-${VERSION}.tar.gz"
+SRC_DIR="result-${VERSION}"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	cygmake -j1
+}
